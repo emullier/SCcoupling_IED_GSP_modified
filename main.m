@@ -12,18 +12,19 @@
 clear; clc;close all
 
 restoredefaultpath
-addpath('functions')
+addpath('/home/localadmin/Documents/CODES/SCcoupling_IED_GSP_modified/SCcoupling_IED_GSP_modified/functions')
 
 %initialise variables
 time_w=[.3 .7]; %time window for analyses, in sec
 
 %add your own path to the data
-datapath = './data';
+datapath = '/home/localadmin/Documents/CODES/SCcoupling_IED_GSP_modified/data';
 
 %load data
 load(fullfile(datapath,'func_data'))
 %load(fullfile(datapath,'struct_data'))
-load(fullfile(datapath,'struct_data_Wnormalized_fiber_density_43subs_L2008_dist.mat'))
+%load(fullfile(datapath,'struct_data_Wnumber_of_fibers_28subs_L2008_DSI_dist.mat'))
+load('/home/localadmin/Documents/CODES/SCcoupling_IED_GSP_modified/data/struct_data_MatMat_28subs_L2008_DSI_normalized_fiber_density.mat')
 
 % decompose SC
 [U,LambdaL] = laplacian_decomposition(struct_data.SC  );
